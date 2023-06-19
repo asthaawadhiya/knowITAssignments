@@ -1,0 +1,63 @@
+package myClasses;
+
+import stackDatastructure.MyStack;
+
+public class PostFixExp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str = "12+";
+		int n=str.length();
+		int val2,val1;
+		MyStack stk=new MyStack(n);
+		int i=0;
+		char c;
+		
+		while(i<n)
+		{
+			c=str.charAt(i);
+			if(Character.isDigit(c))
+			{
+				stk.push(c-'0');
+			}
+			else
+			{   
+				val2=stk.pop();
+				val1=stk.pop();
+				if(c=='+')
+			
+				{
+				   stk.push(val1+val2);
+				}
+				if(c=='-')
+					
+				{
+				   stk.push(val1-val2);
+				
+				}
+				if(c=='*')
+					
+				{
+				   stk.push(val1*val2);
+			
+				}
+				if(c=='/')
+					
+				{
+				   stk.push(val1/val2);
+				  
+				}
+				
+				
+			}
+			i++;
+			
+			
+		}
+		System.out.println(stk.pop());
+		
+
+	}
+
+}
+

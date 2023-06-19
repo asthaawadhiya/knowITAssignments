@@ -1,0 +1,53 @@
+package mainClasses;
+
+import java.util.Scanner;
+
+public class BinaryToDecimal {
+	public static int isBinary(int n)
+	{
+		boolean flag = true;
+		int i;
+		int c=0;
+		int res=0;
+	    while(n!=0)
+	    {
+	    	i = n%10;
+	    	if(i==1||i==0) 
+	    	{
+	    		res+=i*Math.pow(2,c);
+	    		n=n/10;
+	    		c++;
+	    		continue;
+	    	}
+	    	else
+	    	{
+	    		flag = false;
+	    		break;
+	    	}
+	    	
+	    }
+	    
+	    return res;
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	   Scanner sc = new Scanner(System.in);
+	   System.out.println("Enter a binary no.");
+	   int n = sc.nextInt();
+	   int res=isBinary(n);
+	   if(res!=0)
+	   {
+	   
+		   System.out.println("result : "+res);
+	   }
+	   else
+	   {
+		   System.out.println("num is not binary");
+	   }
+	   
+
+	}
+
+}
